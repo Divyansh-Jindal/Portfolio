@@ -1,4 +1,3 @@
-/*  import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
 *{
@@ -11,22 +10,6 @@ html{
     scroll-behavior: smooth;
 }
 
-/* custom scroll bar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-/* all similar content styling codes */
 section{
     padding: 30px 0;
 }
@@ -35,11 +18,10 @@ section{
     padding: 0 80px;
     margin: auto;
 }
-.about, .services, .skills, .teams, .contact, footer{
+.about, .skills, .contact, footer{
     font-family: 'Poppins', sans-serif;
 }
 .about .about-content,
-.services .serv-content,
 .skills .skills-content,
 .contact .contact-content{
     display: flex;
@@ -56,16 +38,7 @@ section .title{
     padding-bottom: 20px;
     font-family: 'Ubuntu', sans-serif;
 }
-section .title::before{
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    width: 180px;
-    height: 3px;
-    background: #111;
-    transform: translateX(-50%);
-}
+
 section .title::after{
     position: absolute;
     bottom: -8px;
@@ -77,11 +50,10 @@ section .title::after{
     transform: translateX(-50%);
 }
 
-/* navbar styling */
 .navbar{
     position: fixed;
     width: 100%;
-    z-index: 999;
+    z-index: 1;
     padding: 30px 0;
     font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
@@ -95,18 +67,7 @@ section .title::after{
     align-items: center;
     justify-content: space-between;
 }
-.navbar .logo a{
-    color: #fff;
-    font-size: 35px;
-    font-weight: 600;
-}
-.navbar .logo a span{
-    color: crimson;
-    transition: all 0.3s ease;
-}
-.navbar.sticky .logo a span{
-    color: #fff;
-}
+
 .navbar .menu li{
     list-style: none;
     display: inline-block;
@@ -130,7 +91,6 @@ section .title::after{
     padding: 0px 20px;
 }
 
-/* menu btn styling */
 .menu-btn{
     color: #fff;
     font-size: 23px;
@@ -138,36 +98,7 @@ section .title::after{
     display: none;
     margin-left: 10px;
 }
-.scroll-up-btn{
-    position: fixed;
-    height: 45px;
-    width: 42px;
-    background: crimson;
-    right: 30px;
-    bottom: 10px;
-    text-align: center;
-    line-height: 45px;
-    color: #fff;
-    z-index: 9999;
-    font-size: 30px;
-    border-radius: 6px;
-    border-bottom-width: 2px;
-    cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-.scroll-up-btn.show{
-    bottom: 30px;
-    opacity: 1;
-    pointer-events: auto;
-}
-.scroll-up-btn:hover{
-    filter: brightness(90%);
-}
 
-
-/* home section styling */
 .home{
     display: flex;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/banner.jpg") no-repeat center;
@@ -219,7 +150,6 @@ section .title::after{
     background: none;
 }
 
-/* about section styling */
 .about .title::after{
     content: "who i am";
 }
@@ -262,8 +192,6 @@ section .title::after{
     color: crimson;
     background: none;
 }
-
-/* skills section styling */
 
 .skills .title::after{
     content: "what i know";
@@ -331,11 +259,13 @@ section .title::after{
 .skills-content .right .js::before{
     width: 40%;
 }
+.skills-content .right .java::before{
+    width: 60%;
+}
 .skills-content .right .C::before{
     width: 70%;
 }
 
-/* contact section styling */
 .contact .title::after{
     content: "get in touch";
 }
@@ -399,8 +329,8 @@ section .title::after{
     font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
 }
-.contact .right form .field input:focus,
-.contact .right form .textarea textarea:focus{
+.contact .right form .field input,
+.contact .right form .textarea textarea{
     border-color: #b3b3b3;
 }
 .contact .right form .textarea textarea{
@@ -430,7 +360,7 @@ section .title::after{
   color: crimson;
   background: none;
 }
-/* footer section styling */
+
 footer{
     background: #111;
     padding: 15px 23px;
@@ -446,7 +376,6 @@ footer span a:hover{
 }
 
 
-/* responsive media query start */
 @media (max-width: 1104px) {
     .about .about-content .left img{
         height: 350px;
@@ -462,10 +391,7 @@ footer span a:hover{
 @media (max-width: 947px){
     .menu-btn{
         display: block;
-        z-index: 999;
-    }
-    .menu-btn i.active:before{
-        content: "\f00d";
+        z-index: 1;
     }
     .navbar .menu{
         position: fixed;
@@ -513,10 +439,7 @@ footer span a:hover{
     .about .about-content .right{
         flex: 100%;
     }
-    .services .serv-content .card{
-        width: calc(50% - 10px);
-        margin-bottom: 20px;
-    }
+   
     .skills .skills-content .column,
     .contact .contact-content .column{
         width: 100%;
@@ -536,9 +459,6 @@ footer span a:hover{
     }
     .home .home-content a{
         font-size: 20px;
-    }
-    .services .serv-content .card{
-        width: 100%;
     }
 }
 
@@ -563,12 +483,5 @@ footer span a:hover{
     .right form .error-box{
        width: 150px;
     }
-    .scroll-up-btn{
-        right: 15px;
-        bottom: 15px;
-        height: 38px;
-        width: 35px;
-        font-size: 23px;
-        line-height: 38px;
-    }
+    
 }
